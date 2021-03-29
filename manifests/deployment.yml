@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "minervaaks-3b0d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "minervaaks-3b0d"
+  template:
+    metadata:
+      labels:
+        app: "minervaaks-3b0d"
+    spec:
+      containers:
+        - name: "minervaaks-3b0d"
+          image: "avaminervaregistry.azurecr.io/minervaaks"
+          ports:
+          - containerPort: 5278
