@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "minervaaks-3b0d"
+    labels:
+        app: "minervaaks-3b0d"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 5278
+      targetPort: 5278
+      protocol: TCP
+      name: http
+    selector:
+        app: "minervaaks-3b0d"
